@@ -1,0 +1,17 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">个人中心</view>
+</cu-custom>
+
+<view class="cu-list menu ">
+
+<block wx:for="{{contactList}}" wx:key="index" >
+    <view class="cu-item arrow" bindtap="gotoContact" data-code="{{item.classcode}}">
+        <view class="content">
+            <text class="cuIcon-circlefill text-grey"></text>
+            <text class="text-grey">{{item.classname}}</text>
+        </view>
+    </view>
+</block>
+    
+</view>

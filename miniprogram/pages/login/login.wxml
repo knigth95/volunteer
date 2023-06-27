@@ -1,0 +1,24 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="backText">返回</view>
+  <view slot="content">登录页面</view>
+</cu-custom>
+
+<image mode="heightFix" src="cloud://vx-8g44qorpcc37b07f.7678-vx-8g44qorpcc37b07f-1314209492/p.png"></image>
+
+<view class="cu-form-group">
+  <view class="title"><text style="color: red;">*</text>用户名：</view>
+  <input placeholder="请输入用户名" bindinput="inputName"></input>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style="color: red;">*</text>密 码：</view>
+  <input placeholder="请输入密码" bindinput="inputPasswd" password></input>
+</view>
+
+<view class="flex solid-bottom padding justify-center">
+  <button style="width: 250rpx;" class="cu-btn bg-green margin-tb-sm lg" bindtap="loginEvent">登录</button>
+  <button style="width: 250rpx;" class="cu-btn bg-red margin-tb-sm lg" bindtap="registerEvent">忘记密码</button>
+</view>
+
+<view style="display: flex; position: fixed; bottom: 0px; justify-content: center; width: 100%;">
+  <text style="font-size: 12px;">Copyright © 温州大学 Wenzhou University All Rights Reserved.</text>
+</view>

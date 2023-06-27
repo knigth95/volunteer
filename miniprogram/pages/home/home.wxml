@@ -1,0 +1,20 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+    <view slot="backText">返回</view>
+    <view slot="content">首页</view>
+</cu-custom>
+
+<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="{{true}}" interval="5000" duration="500">
+    <swiper-item wx:for="{{swiperList}}" wx:key="index" >
+        <image src="{{item.url}}" mode="aspectFill"></image>
+    </swiper-item>
+</swiper>
+
+<view class="cu-list grid col-4 ">
+    <view class="cu-item" wx:for="{{iconList}}" wx:key="index" bindtap="enterApplication" data-item="{{item}}">
+        <view >
+            <image style="width: 100rpx;height:100rpx;" src="{{item.url}}" ></image>
+        </view>
+        <text >{{item.name}}</text>
+    </view>
+</view>
+

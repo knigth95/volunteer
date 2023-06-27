@@ -1,0 +1,42 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">活动详情</view>
+</cu-custom>
+
+<view class="cu-card dynamic no-card">
+    <view class="cu-item shadow">
+        <view class="cu-list menu-avatar">
+            <view class="cu-item">
+                <view class="cu-avatar round lg" style="background-image:url({{newsInfo.avatarUrl}});">头像</view>
+                <view class="content flex-sub">
+                    <view>发布人：{{newsInfo.publisher}} </view>
+                    <view class="text-gray text-sm flex justify-between">
+                        {{newsInfo.dateString}} 时间
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="text-content">
+            {{newsInfo.title}} 
+        </view>
+        <view class="text-content">
+            开始时间：{{newsInfo.start_date}}  {{newsInfo.start_time}}
+        </view>
+        <view class="text-content">
+            结束时间：{{newsInfo.end_date}}  {{newsInfo.end_time}}
+        </view>
+        <view style="height: 1200rpx;" class="padding-lr text-gray">
+            <text class="cu-bar" space="ensp">{{newsInfo.content}} </text>
+            <!--
+            <button class="bg-blue padding-sm margin-xs justify-content:cente" r open-type="getUserInfo" bindgetuserinfo="getUserInfo">我要报名</button>
+            -->
+        </view>
+        <view class="page-wrapper ">
+            <view class="blog-bottom-wrapper" >
+               <view class= "blog-bottom">
+                    <button  class="button" bindtap="editBlog" open-type="getUserInfo" bindgetuserinfo="getUserInfo">报名</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

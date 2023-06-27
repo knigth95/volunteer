@@ -1,0 +1,46 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">通讯录</view>
+</cu-custom>
+
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search" bindinput="seachPerson"></input>
+  </view>
+  <view class="action">
+    <button style="width: 180rpx;" class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
+  </view>
+</view>
+
+
+
+<view class="cu-list menu-avatar no-padding">
+    <view class="cu-item" wx:for="{{contactList}}" wx:key="index"  bindtap="clickEvent" data-item="{{item}}">
+        <view class="cu-avatar round lg">{{item.gender}}</view>
+        <view class="content">
+            <view class="text-grey">{{item.name}}</view>
+            <view class="text-gray text-sm">
+                {{item.phone}}
+            </view>
+        </view>
+    </view>
+</view>
+
+
+<view class="cu-modal bottom-modal {{modalName=='contactModal'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog" catchtap>
+    <view class="cu-bar bg-white">
+      <view class="action text-blue" bindtap="hideModal">取消</view>
+      <view class="action text-green" bindtap="hideModal">确定</view>
+    </view>
+    <view class="bg-white">
+        <view class="padding" bindtap="makePhone">
+            <text class="cuIcon-phone lg text-green"></text>{{selectPerson.name}}{{selectPerson.phone}}
+        </view>
+        <view class="padding" bindtap="addContact">
+            <text class="cuIcon-favorfill lg text-green"></text>添加到通讯录
+        </view>
+    </view>
+  </view>
+</view>

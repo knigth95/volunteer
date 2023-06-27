@@ -1,0 +1,30 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText" bindtap="returnEvent">返回</view>
+    <view slot="content">重置密码</view>
+</cu-custom>
+<view class="cu-form-group">
+    <view class="title"><text style="color: red;">*</text>真实姓名：</view>
+    <input placeholder="请输入姓名" bindinput="inputName"></input>
+</view>
+<view class="cu-form-group">
+    <view class="title"><text style="color: red;">*</text>学 号：</view>
+    <input placeholder="请输入学号" bindinput="inputPass" ></input>
+</view>
+<view class="cu-form-group">
+    <view class="title"><text style="color: red;">*</text>班级：</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <view class="picker">
+            {{index?picker[index]:'请选择班级'}}
+        </view>
+    </picker>
+</view>
+<view class="flex solid-bottom padding justify-center">
+    <button style="width: 250rpx;" class="cu-btn bg-green margin-tb-sm lg" bindtap="resetEvent">重置密码</button>
+</view>
+<view style="display: flex; position: fixed;  justify-content: center; width: 100%;">
+    <text style="font-size: 12px;">默认密码为学号后六位，建议登录后及时更改密码</text>
+</view>
+
+<view style="display: flex; position: fixed; bottom: 0px; justify-content: center; width: 100%;">
+    <text style="font-size: 12px;">Copyright © 温州大学 Wenzhou University All Rights Reserved.</text>
+</view>

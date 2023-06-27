@@ -1,0 +1,54 @@
+<!--pages/app/activity/activity.wxml-->
+<text>pages/app/activity/activity.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">志愿活动页面</view>
+</cu-custom>
+
+
+<view class="cu-bar bg-cyan search" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search" bindinput="seachPerson"></input>
+  </view>
+  <view class="action">
+    <button style="width: 180rpx;" class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
+  </view>
+</view>
+
+<view class="cu-card dynamic">
+
+    <view class="cu-item shadow" wx:for="{{newsList}}" bindtap="newdetail" data-item="{{item}}">
+        <view class="cu-list menu-avatar">
+            <view class="cu-item">
+                <view class="cu-avatar round lg" style="background-image:url({{item.avatarUrl}});"></view>
+                <view class="content flex-sub">
+                    <view>{{item.publisher}}</view>
+                    <view class="text-gray text-sm flex justify-between">
+                        {{item.dateString}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="text-content">
+            {{item.title}}
+        </view>
+        <view class="text-content">开始时间：{{item.start_date}}{{item.start_time}}</view>
+        <view class="text-content">结束时间：{{item.end_date}}{{item.end_time}}</view>
+        <view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+            <image src="{{item.imgcloudPath[0]}}"></image>
+        </view>
+        <view class='text-content'>
+            <view bindtap='favorclick' data-id='{{item.id}}' data-islike="{{item.is_like}}" data-dex="{{index}}" data-userid="{{item.user_id}}" class="like_box">
+                <view class='zan_num'>{{item.like_num}}</view>
+            </view>
+        </view>
+        <view class="text-green text-lg text-right padding">
+            <text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.view}}
+
+            <text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.thumbs}}
+
+            <text class="cuIcon-messagefill margin-lr-xs"></text> {{item.comment}}
+        </view>
+    </view>
+</view>

@@ -1,0 +1,19 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="content">登录</view>
+</cu-custom>
+
+<view class="bg-white solid-bottom ">
+  <view class="title">
+      <open-data type="userAvatarUrl"></open-data>
+  </view>
+</view>
+
+<view class="padding bg-white">
+  <view class="text-black">该应用将获取以下授权：</view>
+  <view class="text-grey">获取您的公开信息(昵称，头像，性别等)</view>
+</view>
+
+<view class="bg-white" style='display: flex; justify-content: center; '>
+<button bindtap="refuseAuth" class="cu-btn xl bg-green padding-sm margin-xs">拒绝</button>
+<button bindtap="getUserProfile" class="cu-btn xl bg-green padding-sm margin-xs">允许</button>
+</view>

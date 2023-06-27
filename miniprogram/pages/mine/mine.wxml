@@ -1,0 +1,56 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+    <view slot="backText">返回</view>
+    <view slot="content">我的</view>
+</cu-custom>
+
+<view class="padding">
+    <view class="cu-avatar xl round margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);"></view>
+</view>
+<view class="cu-list menu sm-border card-menu margin-top">
+    <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" url="../member/member" open-type="navigateTo" bindtap="enterApplication">
+            <image src="/images/member.png" class="png" mode="aspectFit"></image>
+            <text class="text-grey">个人信息</text>
+            
+        </navigator>
+        <view class="action">
+            <button class="content" bindtap="changeEvent">
+                <text>查看信息</text></button>
+                </view>
+    </view>
+    
+    <view class="cu-item arrow">
+        <view class="content">
+            <image src="/images/pwd.png" class="png" mode="aspectFit"></image>
+            <text class="text-grey">密码</text>
+        </view>
+        <view class="action">
+            <!--
+            <button class="cu-btn round bg-green shadow" bindtap="changeEvent">
+                <text></text>修改密码</button>
+                -->
+            <button class="content" bindtap="changeEvent">
+                <text>修改密码</text></button>
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+            <image src="/images/order.png" class="png" mode="aspectFit"></image>
+            <text class="text-grey">报名记录</text>
+        </navigator>
+    </view>
+
+    <view class="cu-item arrow">
+        <view class="content">
+            <image src="/images/time.png" class="png" mode="aspectFit"></image>
+            <text class="text-grey">志愿时长</text>
+        </view>
+    </view>
+    
+    <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+            <image src="/images/more.png" class="png" mode="aspectFit"></image>
+            <text class="text-grey">更多</text>
+        </navigator>
+    </view>
+</view>

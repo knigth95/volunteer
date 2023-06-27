@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/home/home",
+    "pages/app/contact/contact",
+    "pages/mine/mine",
+    "pages/app/addactivity/addactivity",
+    "pages/app/calendar/calendar",
+    "pages/app/contactdetail/contactdetail",
+    "pages/app/auth/auth",
+    "pages/app/activity/activity",
+    "pages/app/newsdetail/newsdetail",
+    "pages/mine/member/member",
+    "pages/register/register",
+    "pages/changepassword/changepassword",
+    "pages/app/newsdetail/apply/apply",
+    "pages/checkIdentify/checkIdentify"    
+],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+      "cu-custom":"/colorui/components/cu-custom"
+  },
+  "tabBar": {
+    "color": "#707070", 
+    "selectedColor": "#1296db",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/mine.png",
+        "selectedIconPath": "/images/mine1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

@@ -1,0 +1,87 @@
+<!--pages/app/addactivity/addactivity.wxml-->
+<text>pages/app/addactivity/addactivity.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">发布志愿活动</view>
+</cu-custom>
+
+
+<view class="cu-form-group">
+    <view class="title">志愿活动标题：</view>
+    <input placeholder="请输入志愿活动标题" bindinput="inputNews" data-item="title"></input>
+</view>
+<view class="cu-form-group">
+    <view class="title">发布人：</view>
+    <input placeholder="请输入发布人" bindinput="inputNews" data-item="publisher"></input>
+</view>
+
+<view class="cu-form-group">
+		<view class="title">开始时间选择</view>
+		<picker mode="time" value="{{start_time}}" start="00:00" end="23:59" bindchange="TimeChange">
+			<view class="picker">
+				{{start_time}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">开始日期选择</view>
+		<picker mode="date" value="{{start_date}}" start="1933-09-01" end="3050-09-01" bindchange="DateChange">
+			<view class="picker">
+				{{start_date}}
+			</view>
+		</picker>
+	</view>
+
+    <view class="cu-form-group">
+		<view class="title">结束时间选择</view>
+		<picker mode="time" value="{{end_time}}" start="00:00" end="23:59" bindchange="TimeChange">
+			<view class="picker">
+				{{end_time}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">结束日期选择</view>
+		<picker mode="date" value="{{end_date}}" start="1933-09-01" end="3050-09-01" bindchange="DateChange">
+			<view class="picker">
+				{{end_date}}
+			</view>
+		</picker>
+	</view>
+
+<view class="cu-form-group">
+    <view class="title">是否置顶：</view>
+    <switch bindchange="switchChange" class="orange radius sm" checked></switch>
+</view>
+<view class="cu-form-group align-start">
+    <view class="title">内容</view>
+    <textarea maxlength="-1" bindinput="inputNews" data-item="content" placeholder="请输入志愿服务内容"></textarea>
+</view>
+
+
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        图片上传
+    </view>
+    <view class="action">
+        {{imgList.length}}/9
+    </view>
+</view>
+<view class="cu-form-group">
+    <view class="grid col-4 grid-square flex-sub">
+        <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+            <image src='{{imgList[index]}}' mode='aspectFill'></image>
+            <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+                <text class="cuIcon-close"></text>
+            </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+            <text class="cuIcon-cameraadd"></text>
+        </view>
+    </view>
+</view>
+
+
+<view class="flex padding justify-center">
+    <button style="width:250rpx" class="cu-btn bg-blue margin-tb-sm lg" bindtap="submit">提交</button>
+</view>
